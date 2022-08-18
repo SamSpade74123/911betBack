@@ -110,6 +110,8 @@ const slideBarList = [
 const SlideBar = () => {
 
     const [select,setSelect] = useState('');
+    const [isClass,setIsClass] = useState(false);
+    const Class = {isClass,setIsClass}
     return (
         <>
         <Main className='col-span-2 p-2'>
@@ -125,7 +127,7 @@ const SlideBar = () => {
                                     {item.hasDownArrow == true ? <MdKeyboardArrowDown className=''/> : null}
                                 </div>
                             </li>
-                            {item.hasDownArrow == true && select == key ? <SlideMore select={select} Items={item.moreItems} key={key} className=''/> : null}         
+                            {item.hasDownArrow == true && select == key ? <SlideMore select={select} Items={item.moreItems} Class={Class}/> : null}         
                         </Link>
                         </>
                         )
